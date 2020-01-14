@@ -1,6 +1,8 @@
 /* global VIRTUO*/
 'use strict';
 
+
+
 (() => {
   const render = (actors) => {
     const fragment = document.createDocumentFragment();
@@ -8,9 +10,9 @@
     const template = actors.map(actor => {
       return `
         <div class="actor">
-          <span>${actor.who}</span>
-          <span>${actor.type}</span>
-          <span>${actor.amount}</span>
+          <span>${actor.who} :<br/> </span>
+          <span>.Payment type : ${actor.type} <br/> </span>
+          <span>.Amount : ${actor.amount} <br/> <br/> </span>
         </div>
       `;
     }).join('');
