@@ -10,9 +10,9 @@
     const template = actors.map(actor => {
       return `
         <div class="actor">
-          <span>${actor.who} :<br/> </span>
-          <span>.Payment type : ${actor.type} <br/> </span>
-          <span>.Amount : ${actor.amount} <br/> <br/> </span>
+          <span>${actor.who} : </i><br/> </span>
+          <span>.Payment type : ${actor.type} <i class="em em-credit_card" ></i><br/> </span>
+          <span>.Amount : ${actor.amount} <i class="em em-dollar" ></i><br/> <br/> </span>
         </div>
       `;
     }).join('');

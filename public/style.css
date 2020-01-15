@@ -8,6 +8,54 @@ h1{
 	text-align: center;
 }
 
+[data-tip] {
+  position:relative;
+
+}
+[data-tip]:before {
+  content:'';
+
+  display:none;
+  content:'';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #1a1a1a; 
+  position:absolute;
+  top:30px;
+  left:35px;
+  z-index:8;
+  font-size:0;
+  line-height:0;
+  width:0;
+  height:0;
+  margin:1000px;
+}
+[data-tip]:after {
+  display:none;
+  content:attr(data-tip);
+  position:absolute;
+  top:65px;
+  left:0px;
+  padding:5px 8px;
+  background:#00CED1;
+  color:#fff;
+  z-index:9;
+  font-size: 0.75em;
+  height:18px;
+  line-height:18px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space:nowrap;
+  word-wrap:normal;
+
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+  display:block;
+}
+
+
 
 button {
   font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
@@ -21,8 +69,34 @@ button {
   font-size: 13px;
   border-radius: 6px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.5s;
+  cursor: pointer;
 
   }
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 
 
 input[type=text], select {
@@ -47,7 +121,7 @@ input[type=number], select {
 }
 input[type=date], select {
   font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
-  width: 30%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -58,10 +132,13 @@ input[type=date], select {
 input:focus {
   border: 3px solid #555;
 }
+div [data-tip="Dont forget about the reductions : 10% after one day, 30% after 4 days, 50% after 10 days"], select {
+  font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace;
+  width: 30%;
+  display: inline-block;
+
+}
 
 input:hover {
   background-color: #FFFFF0;
 }
-
-
-
